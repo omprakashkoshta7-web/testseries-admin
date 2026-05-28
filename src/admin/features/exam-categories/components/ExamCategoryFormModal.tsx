@@ -21,7 +21,7 @@ const ExamCategoryFormModal: React.FC<Props> = ({ isOpen, editing, form, onFormC
         <Input label="Description" value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} placeholder="Brief description" />
         <Select label="Icon" value={form.icon} onChange={(e) => setForm({ ...form, icon: e.target.value })} options={iconOptions} />
         <Input label="Color (Tailwind gradient)" value={form.color} onChange={(e) => setForm({ ...form, color: e.target.value })} placeholder="from-blue-500 to-blue-600" />
-        <Input label="Image URL" value={form.image || ''} onChange={(e) => setForm({ ...form, image: e.target.value })} placeholder="https://example.com/category-image.jpg" />
+        <Input label="Image URL" value={form.image || ''} onChange={(e) => setForm({ ...form, image: e.target.value })} placeholder="https://..." />
         {form.image && <img src={form.image} alt="Preview" className="w-20 h-20 rounded-xl object-cover border" />}
         <Input label="Order" type="number" value={String(form.order)} onChange={(e) => setForm({ ...form, order: parseInt(e.target.value) || 0 })} />
         <Button onClick={onSave} className="w-full mt-2">{editing ? 'Update' : 'Create'}</Button>

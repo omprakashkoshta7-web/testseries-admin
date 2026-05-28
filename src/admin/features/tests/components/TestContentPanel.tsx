@@ -174,7 +174,7 @@ const TestContentPanel: React.FC<TestContentPanelProps> = ({
               <input type="file" accept=".txt,text/plain" className="hidden" onChange={(e) => { const file = e.target.files?.[0]; if (file) subjectCrud.readTextFile(file, subjectCrud.setBulkSubjectsText); e.currentTarget.value = ''; }} />
             </label>
           </div>
-          <Textarea label="One per line" value={subjectCrud.bulkSubjectsText} onChange={(e) => subjectCrud.setBulkSubjectsText(e.target.value)} rows={7} placeholder={'Math | Quant basics\nEnglish | Grammar and vocabulary\nReasoning'} />
+          <Textarea label="One per line" value={subjectCrud.bulkSubjectsText} onChange={(e) => subjectCrud.setBulkSubjectsText(e.target.value)} rows={7} placeholder={'SubjectName | Description'} />
           <Button onClick={subjectCrud.handleBulkCreateSubjects} className="w-full mt-3"><Plus className="w-4 h-4" />Add Subjects</Button>
         </div>
 
@@ -188,7 +188,7 @@ const TestContentPanel: React.FC<TestContentPanelProps> = ({
           </div>
           <Select label="Subject" value={topicCrud.bulkTopicSubjectId} onChange={(e) => topicCrud.setBulkTopicSubjectId(e.target.value)} options={[{ value: '', label: 'Select Subject' }, ...contentSubjects.map((s: IAdminSubject) => ({ value: s._id, label: s.name }))]} />
           <div className="mt-3">
-            <Textarea label="One per line" value={topicCrud.bulkTopicsText} onChange={(e) => topicCrud.setBulkTopicsText(e.target.value)} rows={5} placeholder={'Algebra | Equations and simplification\nPercentage\nProfit and Loss'} />
+            <Textarea label="One per line" value={topicCrud.bulkTopicsText} onChange={(e) => topicCrud.setBulkTopicsText(e.target.value)} rows={5} placeholder={'TopicName | Description'} />
           </div>
           <Button onClick={topicCrud.handleBulkCreateTopics} className="w-full mt-3"><Plus className="w-4 h-4" />Add Topics</Button>
         </div>
@@ -277,7 +277,7 @@ const TestContentPanel: React.FC<TestContentPanelProps> = ({
             <Button onClick={questionCrud.handleParagraphJsonConvert} className="w-full mt-2" size="sm"><FileText className="w-4 h-4" />Convert to Questions</Button>
           </div>
           <div className="mt-3">
-            <Textarea label="JSON array / generated upload data" value={questionCrud.bulkQuestionsJson} onChange={(e) => questionCrud.setBulkQuestionsJson(e.target.value)} rows={5} placeholder={'[\n  {\n    "text": "What is 2 + 2?",\n    "type": "mcq",\n    "options": [{"label":"A","text":"3"},{"label":"B","text":"4"}],\n    "correctAnswer": "B",\n    "marks": 1,\n    "negativeMarks": 0,\n    "explanation": "2 + 2 = 4"\n  },\n  {\n    "text": "How many sides does a triangle have?",\n    "type": "integer",\n    "correctAnswer": 3,\n    "marks": 1,\n    "negativeMarks": 0\n  }\n]'} />
+            <Textarea label="JSON array / generated upload data" value={questionCrud.bulkQuestionsJson} onChange={(e) => questionCrud.setBulkQuestionsJson(e.target.value)} rows={5} placeholder='Paste JSON array here...' />
             <p className="mt-1 text-[11px] text-tb-gray-500">PDF upload / Paragraph JSON numbered MCQ format se questions extract karta hai: Q1/1. question, A)/(A)/Option A options, Answer: B.</p>
           </div>
           {questionCrud.bulkQuestionCount > 0 && (

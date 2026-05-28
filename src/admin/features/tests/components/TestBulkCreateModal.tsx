@@ -9,11 +9,6 @@ interface TestBulkCreateModalProps {
   onSubmit: (tests: ITestForm[]) => Promise<number>;
 }
 
-const sampleCsv = `title,category,subject,testType,chapter,difficulty,questionsCount,duration,passingScore,totalPoints,status,isPremium,price,originalPrice
-Reasoning Practice Set 1,SSC,Reasoning,subject,,medium,25,30,40,50,published,false,0,0
-Algebra Chapter Test,SSC,Quantitative Aptitude,chapter,Algebra,medium,30,35,40,60,draft,false,0,0
-SSC Full Mock 1,SSC,All Subjects,full,,hard,100,120,40,200,published,true,199,499`;
-
 const emptyFormDefaults = {
   description: '',
   difficulty: 'medium' as const,
@@ -130,7 +125,7 @@ const validateTests = (tests: ITestForm[]) => {
 };
 
 const TestBulkCreateModal: React.FC<TestBulkCreateModalProps> = ({ isOpen, onClose, onSubmit }) => {
-  const [raw, setRaw] = useState(sampleCsv);
+  const [raw, setRaw] = useState('');
   const [error, setError] = useState('');
   const [saving, setSaving] = useState(false);
   const preview = useMemo(() => {

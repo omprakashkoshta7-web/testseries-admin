@@ -51,7 +51,7 @@ const SettingsForm: React.FC<Props> = ({ activeTab, onTabChange, form, onFormCha
           <div className="space-y-5 max-w-2xl">
             <Input label="Site Name" value={form.siteName || ''} onChange={(e) => setForm({ ...form, siteName: e.target.value })} />
             <Textarea label="Site Description" value={form.siteDescription || ''} onChange={(e) => setForm({ ...form, siteDescription: e.target.value })} fullWidth />
-            <Input label="Logo URL" value={form.logoUrl || ''} onChange={(e) => setForm({ ...form, logoUrl: e.target.value })} placeholder="https://example.com/logo.png" />
+            <Input label="Logo URL" value={form.logoUrl || ''} onChange={(e) => setForm({ ...form, logoUrl: e.target.value })} placeholder="https://..." />
             <Input label="Support Email" type="email" value={form.supportEmail || ''} onChange={(e) => setForm({ ...form, supportEmail: e.target.value })} />
           </div>
         </Card>

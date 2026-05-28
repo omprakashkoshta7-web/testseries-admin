@@ -41,7 +41,7 @@ const QuestionBulkUpload: React.FC<QuestionBulkUploadProps> = ({
             rows={12}
             value={bulkJson}
             onChange={(e) => onBulkJsonChange(e.target.value)}
-            placeholder={JSON.stringify([{text: '...', type: 'mcq', section: 'Physics', options: ['A', 'B', 'C', 'D'], correctAnswer: '...', explanation: '...', category: 'SSC', subject: 'Math', difficulty: 'medium', marks: 1, negativeMarks: 0.25}, {text: '...', type: 'integer', section: 'Math', correctAnswer: 42, marks: 1, subject: 'Math'}])}
+            placeholder='Paste JSON array here...'
           />
           <p className="text-xs text-tb-gray-500 dark:text-gray-400">
               Each question object must have: text, type, section, category, subject, difficulty, marks. For MCQ types include options and correctAnswer. For integer types include correctAnswer (number).

@@ -41,7 +41,7 @@ const LoginForm: React.FC<Props> = ({ email, onEmailChange, password, onPassword
         <Input
           label="Email Address"
           type="email"
-          placeholder="admin@example.com"
+          placeholder="Enter your email"
           value={email}
           onChange={(e) => onEmailChange(e.target.value)}
           icon={<Mail className="w-4 h-4" />}
