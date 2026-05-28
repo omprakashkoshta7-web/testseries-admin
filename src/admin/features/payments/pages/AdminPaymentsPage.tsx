@@ -47,7 +47,7 @@ const AdminPaymentsPage: React.FC = () => {
         actions={<DeleteAllButton resource="payments" displayName="Payments" />}
       />
 
-      <PaymentSummaryCards summary={summary} />
+      {summary.totalRevenue > 0 && <PaymentSummaryCards summary={summary} />}
 
       <div className="admin-card-solid p-4">
         <div className="flex flex-col sm:flex-row gap-3">
