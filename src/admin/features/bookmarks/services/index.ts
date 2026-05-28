@@ -1,0 +1,1 @@
+export { fetchBookmarks } from './api';

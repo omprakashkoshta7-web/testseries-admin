@@ -1,0 +1,1 @@
+export const ACTIVITY_LOG_PAGE_LIMIT = 20;

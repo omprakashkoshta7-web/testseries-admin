@@ -1,0 +1,11 @@
+.reviewCard {
+  @apply admin-list-card p-4 flex items-center justify-between gap-4;
+}
+
+.reviewBadge {
+  @apply px-2 py-0.5 rounded-full text-xs font-medium;
+}
+
+.reviewIcon {
+  @apply w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center;
+}

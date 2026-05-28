@@ -1,0 +1,27 @@
+.examCard {
+  @apply p-4 flex items-center justify-between gap-4;
+}
+
+.examInfo {
+  @apply flex items-center gap-4;
+}
+
+.examAvatar {
+  @apply w-10 h-10 rounded-xl bg-gradient-to-br flex items-center justify-center;
+}
+
+.examName {
+  @apply text-tb-navy dark:text-white font-semibold;
+}
+
+.examMeta {
+  @apply text-xs text-tb-gray-500 dark:text-gray-400;
+}
+
+.examDescription {
+  @apply text-xs text-tb-gray-400 mt-0.5;
+}
+
+.actionButtons {
+  @apply flex items-center gap-2;
+}

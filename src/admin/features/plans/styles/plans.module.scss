@@ -1,0 +1,27 @@
+.card {
+  @apply admin-list-card p-5;
+}
+
+.header {
+  @apply flex items-start justify-between mb-3;
+}
+
+.price {
+  @apply text-2xl font-bold text-tb-navy dark:text-white;
+}
+
+.originalPrice {
+  @apply text-sm text-tb-gray-400 line-through;
+}
+
+.discount {
+  @apply text-xs font-medium text-tb-green;
+}
+
+.featureList {
+  @apply space-y-1 mb-4;
+}
+
+.actions {
+  @apply flex items-center justify-between;
+}

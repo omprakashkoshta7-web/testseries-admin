@@ -1,0 +1,22 @@
+.topic-initials {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, #0d9488, #0f766e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.topic-meta {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.topic-description {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
