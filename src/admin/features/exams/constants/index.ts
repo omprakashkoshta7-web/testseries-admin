@@ -13,4 +13,5 @@ export const emptyForm: IAdminExamForm = {
   order: 0,
   group: '',
   sectionId: '',
+  subCategories: [],
 };

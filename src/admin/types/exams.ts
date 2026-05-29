@@ -11,6 +11,7 @@ export interface IAdminExam {
   difficulty: string;
   sectionId?: string | null;
   group?: 'national' | 'state' | '';
+  subCategories?: string[];
   successStats: { label: string; value: string }[];
   bannerUrl: string;
   isActive: boolean;
@@ -32,6 +33,7 @@ export interface IAdminExamForm {
   order: number;
   sectionId: string;
   group: 'national' | 'state' | '';
+  subCategories: string[];
 }
 
 export interface IAdminExamsState {

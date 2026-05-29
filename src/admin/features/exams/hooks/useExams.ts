@@ -40,7 +40,7 @@ export const useExams = () => {
 
   const openEdit = (exam: IAdminExam) => {
     const catId = typeof exam.categoryId === 'object' ? exam.categoryId._id : exam.categoryId;
-    setEditing(exam); setForm({ name: exam.name, slug: exam.slug, categoryId: catId, description: exam.description, icon: exam.icon, color: exam.color, bannerUrl: exam.bannerUrl || '', difficulty: exam.difficulty, isActive: exam.isActive, order: exam.order, group: exam.group || '', sectionId: exam.sectionId || '' }); setModalOpen(true);
+    setEditing(exam); setForm({ name: exam.name, slug: exam.slug, categoryId: catId, description: exam.description, icon: exam.icon, color: exam.color, bannerUrl: exam.bannerUrl || '', difficulty: exam.difficulty, isActive: exam.isActive, order: exam.order, group: exam.group || '', sectionId: exam.sectionId || '', subCategories: exam.subCategories || [] }); setModalOpen(true);
   };
 
   const handleSave = async () => {
