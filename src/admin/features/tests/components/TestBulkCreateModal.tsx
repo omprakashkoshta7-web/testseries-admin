@@ -12,6 +12,7 @@ interface TestBulkCreateModalProps {
 const emptyFormDefaults = {
   description: '',
   difficulty: 'medium' as const,
+  class: 'all' as const,
   questionsCount: 0,
   duration: 60,
   passingScore: 40,
@@ -79,6 +80,7 @@ const normalizeRow = (row: Record<string, any>): ITestForm => ({
   category: String(row.category || '').trim(),
   subject: String(row.subject || row.category || '').trim(),
   testType: normalizeType(String(row.testType || row.type || 'subject').trim()),
+  class: ['11', '12', 'all'].includes(row.class) ? row.class : 'all',
   chapter: String(row.chapter || row.topic || '').trim(),
   difficulty: ['easy', 'medium', 'hard'].includes(row.difficulty) ? row.difficulty : 'medium',
   questionsCount: toNumber(row.questionsCount || row.totalQuestions, 0),

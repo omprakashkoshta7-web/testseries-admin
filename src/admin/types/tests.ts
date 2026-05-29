@@ -11,6 +11,7 @@ export interface ITest {
   category: string;
   subject: string;
   testType: 'subject' | 'chapter' | 'full';
+  class: '11' | '12' | 'all';
   chapter: string;
   difficulty: 'easy' | 'medium' | 'hard';
   questionsCount: number;
@@ -39,6 +40,7 @@ export interface ITestForm {
   category: string;
   subject: string;
   testType: 'subject' | 'chapter' | 'full';
+  class: '11' | '12' | 'all';
   chapter: string;
   difficulty: 'easy' | 'medium' | 'hard';
   questionsCount: number;

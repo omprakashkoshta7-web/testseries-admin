@@ -173,6 +173,29 @@ const TestFormModal: React.FC<TestFormModalProps> = ({ isOpen, onClose, editingT
             value={form.difficulty}
             onChange={(e) => onFormChange({ ...form, difficulty: e.target.value as 'easy' | 'medium' | 'hard' })}
           />
+          <div>
+            <p className="text-xs font-medium text-tb-gray-500 mb-1.5">Class</p>
+            <div className="flex rounded-lg border border-tb-gray-200 dark:border-gray-700 overflow-hidden">
+              {[
+                { value: 'all', label: 'All' },
+                { value: '11', label: 'Class 11' },
+                { value: '12', label: 'Class 12' },
+              ].map((c) => (
+                <button
+                  key={c.value}
+                  type="button"
+                  onClick={() => onFormChange({ ...form, class: c.value as '11' | '12' | 'all' })}
+                  className={`flex-1 px-3 py-1.5 text-xs font-bold transition-all ${
+                    form.class === c.value
+                      ? 'bg-blue-600 text-white'
+                      : 'bg-white dark:bg-gray-800 text-tb-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700'
+                  }`}
+                >
+                  {c.label}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <Input label="Questions" type="number" value={form.questionsCount || ''} onChange={(e) => onFormChange({ ...form, questionsCount: Number(e.target.value) })} />
