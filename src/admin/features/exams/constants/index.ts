@@ -12,4 +12,5 @@ export const emptyForm: IAdminExamForm = {
   isActive: true,
   order: 0,
   group: '',
+  sectionId: '',
 };

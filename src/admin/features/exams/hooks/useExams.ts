@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import { useAdminDispatch, useAdminSelector } from '../../../store/hooks';
 import { fetchAdminExams, createAdminExam, updateAdminExam, deleteAdminExam } from '../store/exams.slice';
 import { fetchExamCategories } from '../../exam-categories/store/examCategories.slice';
-import type { IAdminExam, IExamCategory } from '../../../types';
+import { fetchAdminExamSectionsApi } from '../services/examSections.api';
+import type { IAdminExam, IExamCategory, IExamSection } from '../../../types';
 import { useToast } from '../../../utils/ToastContext';
 import { emptyForm } from '../constants';
 
@@ -16,9 +17,18 @@ export const useExams = () => {
   const [editing, setEditing] = useState<IAdminExam | null>(null);
   const [form, setForm] = useState(emptyForm);
   const [confirmDelete, setConfirmDelete] = useState<string | null>(null);
+  const [sections, setSections] = useState<IExamSection[]>([]);
   const { showToast } = useToast();
 
   useEffect(() => { dispatch(fetchAdminExams(undefined)); dispatch(fetchExamCategories()); }, [dispatch]);
+
+  useEffect(() => {
+    if (form.categoryId) {
+      fetchAdminExamSectionsApi(form.categoryId).then(setSections).catch(() => setSections([]));
+    } else {
+      setSections([]);
+    }
+  }, [form.categoryId]);
 
   const filtered = items.filter((e: IAdminExam) => {
     const matchSearch = e.name.toLowerCase().includes(search.toLowerCase());
@@ -30,7 +40,7 @@ export const useExams = () => {
 
   const openEdit = (exam: IAdminExam) => {
     const catId = typeof exam.categoryId === 'object' ? exam.categoryId._id : exam.categoryId;
-    setEditing(exam); setForm({ name: exam.name, slug: exam.slug, categoryId: catId, description: exam.description, icon: exam.icon, color: exam.color, bannerUrl: exam.bannerUrl || '', difficulty: exam.difficulty, isActive: exam.isActive, order: exam.order, group: exam.group || '' }); setModalOpen(true);
+    setEditing(exam); setForm({ name: exam.name, slug: exam.slug, categoryId: catId, description: exam.description, icon: exam.icon, color: exam.color, bannerUrl: exam.bannerUrl || '', difficulty: exam.difficulty, isActive: exam.isActive, order: exam.order, group: exam.group || '', sectionId: exam.sectionId || '' }); setModalOpen(true);
   };
 
   const handleSave = async () => {
@@ -48,5 +58,5 @@ export const useExams = () => {
 
   const handleConfirmDelete = (id: string) => setConfirmDelete(id);
 
-  return { items, loading, categories, search, setSearch, catFilter, setCatFilter, filtered, modalOpen, setModalOpen, editing, form, setForm, confirmDelete, setConfirmDelete, openCreate, openEdit, handleSave, handleDelete, handleConfirmDelete };
+  return { items, loading, categories, search, setSearch, catFilter, setCatFilter, filtered, modalOpen, setModalOpen, editing, form, setForm, confirmDelete, setConfirmDelete, openCreate, openEdit, handleSave, handleDelete, handleConfirmDelete, sections };
 };

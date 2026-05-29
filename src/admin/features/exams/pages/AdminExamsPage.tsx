@@ -11,7 +11,7 @@ import ExamRow from '../components/ExamRow';
 import ExamFormModal from '../components/ExamFormModal';
 
 const AdminExamsPage: React.FC = () => {
-  const { items, loading, categories, search, setSearch, catFilter, setCatFilter, filtered, modalOpen, setModalOpen, editing, form, setForm, confirmDelete, setConfirmDelete, openCreate, openEdit, handleSave, handleDelete } = useExams();
+  const { items, loading, categories, search, setSearch, catFilter, setCatFilter, filtered, modalOpen, setModalOpen, editing, form, setForm, confirmDelete, setConfirmDelete, openCreate, openEdit, handleSave, handleDelete, sections } = useExams();
   const { showToast } = useToast();
 
   if (loading) return <Loader />;
@@ -33,7 +33,7 @@ const AdminExamsPage: React.FC = () => {
         })}
         {filtered.length === 0 && <p className="text-tb-gray-500 dark:text-gray-400 text-center py-8">No exams found</p>}
       </div>
-      <ExamFormModal isOpen={modalOpen} editing={editing} form={form} onFormChange={setForm} categories={categories} onSave={handleSave} onClose={() => setModalOpen(false)} />
+      <ExamFormModal isOpen={modalOpen} editing={editing} form={form} onFormChange={setForm} categories={categories} sections={sections} onSave={handleSave} onClose={() => setModalOpen(false)} />
       <ConfirmModal isOpen={!!confirmDelete} onCancel={() => setConfirmDelete(null)} onConfirm={handleDelete} title="Delete Exam?" message="This will permanently delete this exam." />
     </div>
   );

@@ -17,6 +17,7 @@ export type { IResult, IResultsState, IRevenueReport, IAttemptReport, IReportsSt
 export type { IAdminSubject, IAdminStudyMaterial, IAdminStudyState } from './study';
 export type { IExamCategory, IExamCategoryForm, IExamCategoriesState } from './examCategories';
 export type { IAdminExam, IAdminExamForm, IAdminExamsState } from './exams';
+export type { IExamSection } from './examSections';
 export type { IAdminSubject as IAdminSubjectAlt, IAdminSubjectForm, IAdminSubjectsState } from './adminSubjects';
 export type { ITopic, ITopicForm, ITopicsState } from './topics';
 export type { IAdminPlan, IAdminPlanForm, IAdminPlansState } from './plans';

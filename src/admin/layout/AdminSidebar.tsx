@@ -39,6 +39,7 @@ import {
   Award,
   TrendingUp,
   Receipt,
+  Sliders,
 } from '@shared/icons';
 import { staggerContainer, fadeInLeft } from '../utils/animations';
 
@@ -55,6 +56,7 @@ const mainNavItems = [
 const examNavItems = [
   { label: 'Categories', icon: Layers, path: '/admin/exam-categories' },
   { label: 'Exams', icon: BookOpen, path: '/admin/exams' },
+  { label: 'Exam Sections', icon: Sliders, path: '/admin/exam-sections' },
   { label: 'Subjects', icon: Bookmark, path: '/admin/subjects' },
   { label: 'Topics', icon: Hash, path: '/admin/topics' },
 ];

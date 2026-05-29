@@ -27,6 +27,7 @@ import reviewsReducer from '../features/reviews/store/reviews.slice';
 import leaderboardReducer from '../features/leaderboard/store/leaderboard.slice';
 import bookmarksReducer from '../features/bookmarks/store/bookmarks.slice';
 import homeContentReducer from '../features/home/store/home.slice';
+import examSectionsReducer from '../features/exam-sections/store/examSections.slice';
 import { enrollmentsReducer } from '../features/enrollments/store';
 import { materialPurchasesReducer } from '../features/material-purchases/store';
 
@@ -61,6 +62,7 @@ export const adminStore = configureStore({
     leaderboard: leaderboardReducer,
     bookmarks: bookmarksReducer,
     homeContent: homeContentReducer,
+    examSections: examSectionsReducer,
     enrollments: enrollmentsReducer,
     materialPurchases: materialPurchasesReducer,
   },

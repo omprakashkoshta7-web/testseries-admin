@@ -27,6 +27,7 @@ const AdminReportsPage = lazy(() => import('../features/reports/pages/AdminRepor
 const AdminStudyMaterialsPage = lazy(() => import('../features/study/pages/AdminStudyMaterialsPage').then(m => ({ default: m.default })));
 const AdminExamCategoriesPage = lazy(() => import('../features/exam-categories/pages/AdminExamCategoriesPage').then(m => ({ default: m.default })));
 const AdminExamsPage = lazy(() => import('../features/exams/pages/AdminExamsPage').then(m => ({ default: m.default })));
+const AdminExamSectionsPage = lazy(() => import('../features/exam-sections/pages/AdminExamSectionsPage').then(m => ({ default: m.default })));
 const AdminSubjectsPage = lazy(() => import('../features/subjects/pages/AdminSubjectsPage').then(m => ({ default: m.default })));
 const AdminTopicsPage = lazy(() => import('../features/topics/pages/AdminTopicsPage').then(m => ({ default: m.default })));
 const AdminPlansPage = lazy(() => import('../features/plans/pages/AdminPlansPage').then(m => ({ default: m.default })));
@@ -73,6 +74,7 @@ export const adminRoutes: RouteObject[] = [
           { path: 'study-materials', element: <AdminStudyMaterialsPage /> },
           { path: 'exam-categories', element: <AdminExamCategoriesPage /> },
           { path: 'exams', element: <AdminExamsPage /> },
+          { path: 'exam-sections', element: <AdminExamSectionsPage /> },
           { path: 'subjects', element: <AdminSubjectsPage /> },
           { path: 'topics', element: <AdminTopicsPage /> },
           { path: 'plans', element: <AdminPlansPage /> },
