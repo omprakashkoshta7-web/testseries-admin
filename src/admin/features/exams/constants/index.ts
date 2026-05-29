@@ -11,4 +11,5 @@ export const emptyForm: IAdminExamForm = {
   difficulty: 'medium',
   isActive: true,
   order: 0,
+  group: '',
 };
