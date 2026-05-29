@@ -17,6 +17,7 @@ export const questionTypeOptions = [
   { value: 'mcq', label: 'MCQ' },
   { value: 'single', label: 'Single Correct' },
   { value: 'multiple', label: 'Multiple Correct' },
+  { value: 'true_false', label: 'True/False' },
   { value: 'subjective', label: 'Subjective' },
   { value: 'descriptive', label: 'Descriptive' },
   { value: 'integer', label: 'Integer' },

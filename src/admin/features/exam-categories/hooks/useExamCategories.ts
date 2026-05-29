@@ -21,7 +21,7 @@ export const useExamCategories = () => {
 
   const openCreate = () => { setEditing(null); setForm(emptyForm); setModalOpen(true); };
 
-  const openEdit = (cat: IExamCategory) => { setEditing(cat); setForm({ name: cat.name, slug: cat.slug, description: cat.description, icon: cat.icon, color: cat.color, image: cat.image || '', order: cat.order }); setModalOpen(true); };
+  const openEdit = (cat: IExamCategory) => { setEditing(cat); setForm({ name: cat.name, slug: cat.slug, description: cat.description, icon: cat.icon, color: cat.color, image: cat.image || '', order: cat.order, isActive: cat.isActive }); setModalOpen(true); };
 
   const handleSave = async () => {
     const res = editing

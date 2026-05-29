@@ -27,7 +27,7 @@ const QuestionFormModal: React.FC<QuestionFormModalProps> = ({
   tests, categories, filteredSubjectsForForm, filteredTopicsForForm,
 }) => {
   const { addOption, removeOption, updateOption, updateField } = useQuestionForm(form, onFormChange);
-  const showOptions = form.type === 'mcq' || form.type === 'single' || form.type === 'multiple';
+  const showOptions = form.type === 'mcq' || form.type === 'single' || form.type === 'multiple' || form.type === 'true_false';
   const showNumberAnswer = false; // integer type not supported in current form
 
   return (
@@ -47,7 +47,16 @@ const QuestionFormModal: React.FC<QuestionFormModalProps> = ({
         )}
 
         <QuestionMetaSection type={form.type} difficulty={form.difficulty}
-          onTypeChange={(type) => updateField('type', type)}
+          onTypeChange={(type) => {
+            onFormChange({
+              ...form,
+              type,
+              options: type === 'true_false'
+                ? [{ label: 'A', text: 'True' }, { label: 'B', text: 'False' }]
+                : form.options,
+              correctAnswer: type === 'true_false' ? '' : form.correctAnswer,
+            });
+          }}
           onDifficultyChange={(difficulty) => updateField('difficulty', difficulty)} />
 
         <QuestionCategorySection category={form.category} subject={form.subject} topic={form.topic}

@@ -20,6 +20,7 @@ export interface IExamCategoryForm {
   color: string;
   image?: string;
   order: number;
+  isActive: boolean;
 }
 
 export interface IExamCategoriesState {

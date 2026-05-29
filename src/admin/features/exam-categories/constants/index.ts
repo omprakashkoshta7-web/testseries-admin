@@ -8,6 +8,7 @@ export const emptyForm: IExamCategoryForm = {
   color: 'from-blue-500 to-blue-600',
   image: '',
   order: 0,
+  isActive: true,
 };
 
 export const iconOptions = [

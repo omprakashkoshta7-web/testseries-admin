@@ -24,6 +24,13 @@ const ExamCategoryFormModal: React.FC<Props> = ({ isOpen, editing, form, onFormC
         <Input label="Image URL" value={form.image || ''} onChange={(e) => setForm({ ...form, image: e.target.value })} placeholder="https://..." />
         {form.image && <img src={form.image} alt="Preview" className="w-20 h-20 rounded-xl object-cover border" />}
         <Input label="Order" type="number" value={String(form.order)} onChange={(e) => setForm({ ...form, order: parseInt(e.target.value) || 0 })} />
+        <div className="flex items-center gap-3">
+          <label className="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" className="sr-only peer" checked={form.isActive} onChange={(e) => setForm({ ...form, isActive: e.target.checked })} />
+            <div className="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-tb-blue" />
+          </label>
+          <span className="text-sm font-medium text-tb-navy dark:text-white">Active</span>
+        </div>
         <Button onClick={onSave} className="w-full mt-2">{editing ? 'Update' : 'Create'}</Button>
       </div>
     </Modal>
