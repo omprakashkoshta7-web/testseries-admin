@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Sparkles } from '@shared/icons';
 import AdminSidebar from './AdminSidebar';
 import AdminHeader from './AdminHeader';
 import { ToastProvider } from '../utils/ToastContext';
 import { AdminThemeProvider, useAdminTheme } from '../context/AdminThemeContext';
 import { pageTransition } from '../utils/animations';
+import AiChatPanel from '../features/ai/components/AiChatPanel';
 const pageTitles: Record<string, string> = {
   '/admin/dashboard': 'Dashboard',
   '/admin/users': 'Users',
@@ -41,6 +43,7 @@ const pageTitles: Record<string, string> = {
 
 const LayoutInner: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [aiOpen, setAiOpen] = useState(false);
   const location = useLocation();
   const { sidebarCollapsed } = useAdminTheme();
 
@@ -68,6 +71,17 @@ const LayoutInner: React.FC = () => {
           </AnimatePresence>
         </main>
       </div>
+
+      {!aiOpen ? (
+        <button
+          onClick={() => setAiOpen(true)}
+          className="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-gradient-to-r from-tb-blue to-blue-600 text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center justify-center"
+        >
+          <Sparkles className="w-5 h-5" />
+        </button>
+      ) : (
+        <AiChatPanel onClose={() => setAiOpen(false)} />
+      )}
     </div>
   );
 };
