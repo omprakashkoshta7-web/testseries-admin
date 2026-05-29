@@ -32,7 +32,6 @@ const ExamFormModal: React.FC<Props> = ({ isOpen, editing, form, onFormChange: s
         <Input label="Description" value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })} />
         <Input label="Icon" value={form.icon} onChange={(e) => setForm({ ...form, icon: e.target.value })} />
         <Input label="Color" value={form.color} onChange={(e) => setForm({ ...form, color: e.target.value })} />
-        <Select label="Difficulty" value={form.difficulty} onChange={(e) => setForm({ ...form, difficulty: e.target.value })} options={[{ value: 'easy', label: 'Easy' }, { value: 'medium', label: 'Medium' }, { value: 'hard', label: 'Hard' }]} />
         <Select label="Section (Category Grouping)" value={form.sectionId} onChange={(e) => setForm({ ...form, sectionId: e.target.value })} options={[{ value: '', label: 'None' }, ...sections.map((s) => ({ value: s._id, label: s.title }))]} />
         <div>
           <label className="block text-sm font-medium text-tb-gray-700 dark:text-gray-300 mb-1">Sub-Categories (e.g. CHSL, CGL, MTS)</label>
