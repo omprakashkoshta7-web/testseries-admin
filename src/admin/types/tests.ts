@@ -10,6 +10,7 @@ export interface ITest {
   description: string;
   category: string;
   subject: string;
+  subCategory?: string;
   testType: 'subject' | 'chapter' | 'full';
   class: '11' | '12' | 'all';
   chapter: string;
@@ -39,6 +40,7 @@ export interface ITestForm {
   description: string;
   category: string;
   subject: string;
+  subCategory?: string;
   testType: 'subject' | 'chapter' | 'full';
   class: '11' | '12' | 'all';
   chapter: string;

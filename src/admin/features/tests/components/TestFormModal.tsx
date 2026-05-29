@@ -173,6 +173,14 @@ const TestFormModal: React.FC<TestFormModalProps> = ({ isOpen, onClose, editingT
             value={form.difficulty}
             onChange={(e) => onFormChange({ ...form, difficulty: e.target.value as 'easy' | 'medium' | 'hard' })}
           />
+          {selectedExam?.subCategories && selectedExam.subCategories.length > 0 && (
+            <Select
+              label="Sub-Category"
+              options={[{ value: '', label: 'All' }, ...selectedExam.subCategories.map((sc: string) => ({ value: sc, label: sc }))]}
+              value={form.subCategory || ''}
+              onChange={(e) => onFormChange({ ...form, subCategory: e.target.value })}
+            />
+          )}
           <div>
             <p className="text-xs font-medium text-tb-gray-500 mb-1.5">Class</p>
             <div className="flex rounded-lg border border-tb-gray-200 dark:border-gray-700 overflow-hidden">
