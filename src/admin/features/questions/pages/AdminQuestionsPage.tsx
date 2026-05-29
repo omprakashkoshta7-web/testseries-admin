@@ -12,7 +12,7 @@ import PageHeader from '../../../components/PageHeader';
 import { Plus, Upload } from '@shared/icons';
 import type { IAdminSubject, ITopic } from '../../../types';
 import { typeFilterOptions } from '../constants';
-import { QuestionFilters, QuestionFormModal, QuestionBulkUpload, QuestionsTable } from '../components';
+import { QuestionFilters, QuestionFormModal, BulkImportModal, QuestionsTable } from '../components';
 
 const AdminQuestionsPage: React.FC = () => {
   const dispatch = useAdminDispatch();
@@ -66,8 +66,7 @@ const AdminQuestionsPage: React.FC = () => {
         tests={tests} categories={categories}
         filteredSubjectsForForm={filteredSubjectsForForm} filteredTopicsForForm={filteredTopicsForForm} />
 
-      <QuestionBulkUpload isOpen={form.bulkModalOpen} onClose={() => form.setBulkModalOpen(false)}
-        bulkJson={form.bulkJson} onBulkJsonChange={form.setBulkJson} onUpload={form.handleBulkUpload} />
+      <BulkImportModal isOpen={form.bulkModalOpen} onClose={() => { form.setBulkModalOpen(false); form.setBulkJson(''); }} />
 
       <ConfirmModal isOpen={form.confirmDelete !== null} onCancel={() => form.setConfirmDelete(null)}
         onConfirm={form.handleConfirmDelete} title="Delete Question"
