@@ -25,7 +25,7 @@ const AdminExamCard: React.FC<Props> = ({ exam, onEdit, onDelete }) => {
         <div>
           <h3 className="text-tb-navy dark:text-white font-semibold">{exam.name}</h3>
           <p className="text-xs text-tb-gray-500 dark:text-gray-400">
-            {catName} &middot; {exam.difficulty} &middot; {exam.isActive ? 'Active' : 'Inactive'} &middot; Tests: {exam.totalTests} &middot; Subjects: {exam.totalSubjects}
+            {catName} &middot; {exam.isActive ? 'Active' : 'Inactive'} &middot; Tests: {exam.totalTests} &middot; Subjects: {exam.totalSubjects}
           </p>
           {exam.description && <p className="text-xs text-tb-gray-400 mt-0.5">{exam.description}</p>}
         </div>

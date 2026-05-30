@@ -30,7 +30,7 @@ const AdminQuestionsPage: React.FC = () => {
   ), [subjects, form.form.category]);
 
   const filteredTopicsForForm = useMemo(() => topics.filter((t: ITopic) => {
-    const subjectId = typeof t.subjectId === 'object' ? t.subjectId._id : t.subjectId;
+    const subjectId = t.subjectId && typeof t.subjectId === 'object' ? t.subjectId._id : t.subjectId;
     return !form.form.subject || subjectId === form.form.subject;
   }), [topics, form.form.subject]);
 

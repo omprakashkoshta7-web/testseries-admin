@@ -8,7 +8,6 @@ export interface IAdminExam {
   color: string;
   totalTests: number;
   totalSubjects: number;
-  difficulty: string;
   sectionId?: string | null;
   group?: 'national' | 'state' | '';
   subCategories?: string[];
@@ -28,7 +27,6 @@ export interface IAdminExamForm {
   icon: string;
   color: string;
   bannerUrl?: string;
-  difficulty: string;
   isActive: boolean;
   order: number;
   sectionId: string;

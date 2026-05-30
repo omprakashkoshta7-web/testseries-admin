@@ -8,7 +8,6 @@ export const emptyForm: IAdminExamForm = {
   icon: 'FileText',
   color: 'from-blue-500 to-blue-600',
   bannerUrl: '',
-  difficulty: 'medium',
   isActive: true,
   order: 0,
   group: '',
